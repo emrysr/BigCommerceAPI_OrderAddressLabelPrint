@@ -32,7 +32,7 @@
                 }
             }
             // add order_number as script input (if available)
-            $command = sprintf('ruby %s/shop_download.rb %s %s 2>&1', dirname(__DIR__), $order_number, dirname($_SERVER['SCRIPT_FILENAME']));
+            $command = sprintf('LC_ALL=en_GB.UTF-8 ruby %s/shop_download.rb %s %s 2>&1', dirname(__DIR__), $order_number, dirname($_SERVER['SCRIPT_FILENAME']));
             $last_line = exec($command,$output);
 
             if($last_line !== "Success...let's go surfing!"){
